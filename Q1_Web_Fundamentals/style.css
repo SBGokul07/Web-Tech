@@ -1,0 +1,588 @@
+/* =========================================
+   WEB TECHNOLOGY FUNDAMENTALS
+   Q1 - Professional Assignment Design
+   ========================================= */
+
+/* ---------- Global Styles ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.7;
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+
+/* ---------- Header ---------- */
+
+header {
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+header h1 {
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+header p {
+    font-size: 18px;
+    color: #dbeafe;
+}
+
+
+/* ---------- Navigation ---------- */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    padding: 14px 20px;
+
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+nav a {
+    text-decoration: none;
+    color: #334155;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 8px 14px;
+    border-radius: 8px;
+
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background: #2563eb;
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* ---------- Main Container ---------- */
+
+main {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+
+/* ---------- Sections ---------- */
+
+section {
+    background: white;
+
+    margin: 30px 0;
+    padding: 40px;
+
+    border-radius: 16px;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+
+    scroll-margin-top: 80px;
+}
+
+section h2 {
+    color: #1e3a8a;
+
+    font-size: 28px;
+
+    margin-bottom: 18px;
+
+    padding-bottom: 10px;
+
+    border-bottom: 3px solid #2563eb;
+}
+
+section > p {
+    color: #475569;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+
+/* ---------- Information Cards ---------- */
+
+.info-card {
+    background: #f8fafc;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    border: 1px solid #e2e8f0;
+
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.12);
+
+    border-color: #93c5fd;
+}
+
+.info-card h3 {
+    color: #1d4ed8;
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    color: #475569;
+}
+
+
+/* ---------- Lists ---------- */
+
+.info-card ul {
+    padding-left: 20px;
+    margin-top: 12px;
+}
+
+.info-card li {
+    margin-bottom: 6px;
+    color: #475569;
+}
+
+
+/* ---------- Network Grid ---------- */
+
+.network-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+    margin-top: 25px;
+}
+
+
+/* ---------- URL Box ---------- */
+
+.url-box {
+    background: #0f172a;
+
+    color: #93c5fd;
+
+    padding: 20px 25px;
+
+    border-radius: 10px;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 17px;
+
+    overflow-x: auto;
+
+    margin: 25px 0;
+}
+
+
+/* ---------- URL Parts ---------- */
+
+.url-parts {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.url-parts div {
+    text-align: center;
+
+    padding: 18px 10px;
+
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+
+    border-radius: 10px;
+}
+
+.url-parts strong {
+    display: block;
+
+    color: #1d4ed8;
+
+    font-size: 16px;
+
+    margin-bottom: 5px;
+}
+
+.url-parts p {
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* ---------- Domain Example ---------- */
+
+.domain-example {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 0;
+
+    margin: 30px auto;
+
+    max-width: 500px;
+}
+
+.domain-example span {
+    padding: 18px 25px;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    border: 1px solid #cbd5e1;
+
+    background: #f8fafc;
+}
+
+.domain-example span:first-child {
+    color: #64748b;
+
+    border-radius: 10px 0 0 10px;
+}
+
+.domain-example span:nth-child(2) {
+    color: #2563eb;
+}
+
+.domain-example span:last-child {
+    color: #16a34a;
+
+    border-radius: 0 10px 10px 0;
+}
+
+
+/* ---------- Browser vs Server ---------- */
+
+.comparison {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+    margin-top: 25px;
+}
+
+
+/* ---------- Website Workflow ---------- */
+
+.workflow {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 35px 0;
+
+    flex-wrap: wrap;
+}
+
+.step {
+    width: 190px;
+
+    min-height: 160px;
+
+    padding: 25px 15px;
+
+    text-align: center;
+
+    background: #f8fafc;
+
+    border: 1px solid #dbeafe;
+
+    border-radius: 12px;
+
+    transition: all 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.12);
+}
+
+.step span {
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    margin-bottom: 10px;
+
+    background: #2563eb;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-weight: 700;
+}
+
+.step h3 {
+    color: #1e3a8a;
+
+    margin-bottom: 8px;
+}
+
+.step p {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+.arrow {
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: #2563eb;
+}
+
+
+/* ---------- Workflow Result ---------- */
+
+.workflow-result {
+    padding: 20px;
+
+    text-align: center;
+
+    background: #eff6ff;
+
+    color: #1e40af;
+
+    border: 1px solid #bfdbfe;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+}
+
+
+/* ---------- Comparison Table ---------- */
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 25px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+thead {
+    background: #1e3a8a;
+
+    color: white;
+}
+
+th,
+td {
+    padding: 16px;
+
+    text-align: left;
+
+    border: 1px solid #e2e8f0;
+}
+
+th {
+    font-size: 16px;
+}
+
+td {
+    color: #475569;
+
+    background: #ffffff;
+}
+
+tbody tr:nth-child(even) td {
+    background: #f8fafc;
+}
+
+tbody tr:hover td {
+    background: #eff6ff;
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+    margin-top: 50px;
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    background: #0f172a;
+
+    color: #cbd5e1;
+}
+
+footer p {
+    margin: 5px 0;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    header h1 {
+        font-size: 34px;
+    }
+
+    .network-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .url-parts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .comparison {
+        grid-template-columns: 1fr;
+    }
+
+    .workflow {
+        flex-direction: column;
+    }
+
+    .arrow {
+        transform: rotate(90deg);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 50px 15px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    header p {
+        font-size: 15px;
+    }
+
+    nav {
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 12px;
+
+        padding: 7px 9px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    section {
+        padding: 25px 18px;
+
+        margin: 20px 0;
+    }
+
+    section h2 {
+        font-size: 23px;
+    }
+
+    .url-parts {
+        grid-template-columns: 1fr;
+    }
+
+    .domain-example {
+        flex-direction: column;
+    }
+
+    .domain-example span {
+        width: 100%;
+
+        text-align: center;
+
+        border-radius: 0 !important;
+    }
+
+    .domain-example span:first-child {
+        border-radius: 10px 10px 0 0 !important;
+    }
+
+    .domain-example span:last-child {
+        border-radius: 0 0 10px 10px !important;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
+}

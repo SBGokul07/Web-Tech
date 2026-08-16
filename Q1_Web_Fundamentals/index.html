@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Web Technology Fundamentals</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Web Technology Fundamentals</h1>
+        <p>Understanding How the Modern Web Works</p>
+    </header>
+
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#internet">Internet</a>
+        <a href="#network">Networks</a>
+        <a href="#url">URL</a>
+        <a href="#domain">Domain</a>
+        <a href="#browser">Browser & Server</a>
+        <a href="#working">Website Working</a>
+        <a href="#scripting">Scripting</a>
+    </nav>
+
+
+    <main>
+
+        <!-- 1. Internet Overview -->
+        <section id="internet">
+
+            <h2>1. Internet Overview</h2>
+
+            <p>
+                The Internet is a global network of interconnected
+                computers and devices that communicate with each
+                other using standard communication protocols.
+            </p>
+
+            <div class="info-card">
+
+                <h3>Key Characteristics</h3>
+
+                <ul>
+                    <li>Global connectivity</li>
+                    <li>Information sharing</li>
+                    <li>Communication</li>
+                    <li>Online services</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- 2. Network Concepts -->
+        <section id="network">
+
+            <h2>2. Fundamental Computer Network Concepts</h2>
+
+            <p>
+                A computer network is a collection of connected
+                devices that communicate and share resources.
+            </p>
+
+            <div class="network-grid">
+
+                <div class="info-card">
+                    <h3>LAN</h3>
+                    <p>
+                        Local Area Network used within a limited
+                        geographical area.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>WAN</h3>
+                    <p>
+                        Wide Area Network connecting devices over
+                        large geographical areas.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>IP Address</h3>
+                    <p>
+                        A unique address used to identify a device
+                        on a network.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Protocol</h3>
+                    <p>
+                        A set of rules used for communication
+                        between devices.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- 3. URL -->
+        <section id="url">
+
+            <h2>3. URL and its Structure</h2>
+
+            <p>
+                A URL (Uniform Resource Locator) specifies the
+                location of a resource on the Internet.
+            </p>
+
+            <div class="url-box">
+                https://www.example.com/products?id=101
+            </div>
+
+            <div class="url-parts">
+
+                <div>
+                    <strong>https</strong>
+                    <p>Protocol</p>
+                </div>
+
+                <div>
+                    <strong>www</strong>
+                    <p>Subdomain</p>
+                </div>
+
+                <div>
+                    <strong>example.com</strong>
+                    <p>Domain</p>
+                </div>
+
+                <div>
+                    <strong>/products</strong>
+                    <p>Path</p>
+                </div>
+
+                <div>
+                    <strong>?id=101</strong>
+                    <p>Query Parameter</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- 4. Domain Name -->
+        <section id="domain">
+
+            <h2>4. Domain Name</h2>
+
+            <p>
+                A domain name is a human-readable address used
+                to access a website.
+            </p>
+
+            <div class="domain-example">
+                <span>www</span>
+                <span>example</span>
+                <span>.com</span>
+            </div>
+
+            <p>
+                Domain names are easier for humans to remember
+                than numerical IP addresses.
+            </p>
+
+        </section>
+
+
+        <!-- 5. Browser and Server -->
+        <section id="browser">
+
+            <h2>5. Web Browsers and Web Servers</h2>
+
+            <div class="comparison">
+
+                <div class="info-card">
+
+                    <h3>Web Browser</h3>
+
+                    <p>
+                        A web browser is software used to access
+                        and display websites.
+                    </p>
+
+                    <ul>
+                        <li>Google Chrome</li>
+                        <li>Mozilla Firefox</li>
+                        <li>Microsoft Edge</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <h3>Web Server</h3>
+
+                    <p>
+                        A web server receives requests from clients
+                        and sends the required web resources.
+                    </p>
+
+                    <ul>
+                        <li>Apache</li>
+                        <li>Nginx</li>
+                        <li>Node.js</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- 6. Website Working -->
+        <section id="working">
+
+            <h2>6. Working Principle of a Website</h2>
+
+            <div class="workflow">
+
+                <div class="step">
+                    <span>1</span>
+                    <h3>User</h3>
+                    <p>Enters a website address.</p>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="step">
+                    <span>2</span>
+                    <h3>Browser</h3>
+                    <p>Sends an HTTP/HTTPS request.</p>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="step">
+                    <span>3</span>
+                    <h3>Server</h3>
+                    <p>Processes the request.</p>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="step">
+                    <span>4</span>
+                    <h3>Response</h3>
+                    <p>Server sends resources back.</p>
+                </div>
+
+            </div>
+
+            <div class="workflow-result">
+
+                Browser receives HTML, CSS and JavaScript
+                and displays the webpage to the user.
+
+            </div>
+
+        </section>
+
+
+        <!-- 7. Client vs Server -->
+        <section id="scripting">
+
+            <h2>7. Client-side vs Server-side Scripting</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Client-side</th>
+                        <th>Server-side</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Runs in the user's browser</td>
+                        <td>Runs on the web server</td>
+                    </tr>
+
+                    <tr>
+                        <td>Handles user interface interactions</td>
+                        <td>Handles server-side processing</td>
+                    </tr>
+
+                    <tr>
+                        <td>HTML, CSS, JavaScript</td>
+                        <td>Node.js, PHP, Python</td>
+                    </tr>
+
+                    <tr>
+                        <td>Provides browser interaction</td>
+                        <td>Can communicate with databases</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            Web Technology Assignment I | 2026-2027
+        </p>
+
+        <p>
+            Department of Computer Science and Engineering
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
