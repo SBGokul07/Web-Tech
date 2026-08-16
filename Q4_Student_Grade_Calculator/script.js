@@ -1,149 +1,107 @@
 // ============================================
-// Q4 - STUDENT GRADE CALCULATOR
+// STUDENT GRADE CALCULATOR
 // ============================================
 
-// Get the form
-const form = document.querySelector("form");
-
-// Get result elements
-const totalMarksElement = document.getElementById("totalMarks");
-const averageElement = document.getElementById("average");
-const gradeElement = document.getElementById("grade");
-const statusElement = document.getElementById("status");
-const messageElement = document.getElementById("message");
-
-
-// ============================================
-// FORM SUBMISSION
-// ============================================
-
-form.addEventListener("submit", function (event) {
-
-    // Prevent page refresh
-    event.preventDefault();
-
-    // Get all number inputs
-    const inputs = form.querySelectorAll('input[type="number"]');
-
-    const marks = [];
-
-    inputs.forEach(function (input) {
-        marks.push(Number(input.value));
-    });
+// Function to calculate the grade
+function getGrade(average) {
+    if (average >= 90) {
+        return "A+";
+    } else if (average >= 80) {
+        return "A";
+    } else if (average >= 70) {
+        return "B";
+    } else if (average >= 60) {
+        return "C";
+    } else if (average >= 50) {
+        return "D";
+    } else {
+        return "F";
+    }
+}
 
 
-    // ============================================
-    // VALIDATION
-    // ============================================
+// Main function
+function calculateResult() {
 
-    // Check whether all fields are filled
-    if (marks.some(mark => isNaN(mark))) {
-        alert("Please enter marks for all subjects.");
-        return;
+    // Get marks from the five subjects
+    const mark1 = Number(document.getElementById("subject1").value);
+    const mark2 = Number(document.getElementById("subject2").value);
+    const mark3 = Number(document.getElementById("subject3").value);
+    const mark4 = Number(document.getElementById("subject4").value);
+    const mark5 = Number(document.getElementById("subject5").value);
+
+
+    // Check whether all marks are valid
+    const marks = [mark1, mark2, mark3, mark4, mark5];
+
+    for (let i = 0; i < marks.length; i++) {
+
+        if (
+            document.getElementById(`subject${i + 1}`).value === "" ||
+            isNaN(marks[i]) ||
+            marks[i] < 0 ||
+            marks[i] > 100
+        ) {
+            alert(
+                `Please enter valid marks between 0 and 100 for Subject ${i + 1}.`
+            );
+            return;
+        }
     }
 
-    // Check marks range
-    if (marks.some(mark => mark < 0 || mark > 100)) {
-        alert("Marks must be between 0 and 100.");
-        return;
-    }
-
-
-    // ============================================
-    // CALCULATIONS
-    // ============================================
 
     // Calculate total
-    const total = marks.reduce(function (sum, mark) {
-        return sum + mark;
-    }, 0);
+    const total = mark1 + mark2 + mark3 + mark4 + mark5;
+
 
     // Calculate average
-    const average = total / marks.length;
+    const average = total / 5;
 
 
-    // ============================================
-    // GRADE CALCULATION
-    // ============================================
-
-    let grade;
-
-    if (average >= 90) {
-        grade = "A+";
-    }
-    else if (average >= 80) {
-        grade = "A";
-    }
-    else if (average >= 70) {
-        grade = "B";
-    }
-    else if (average >= 60) {
-        grade = "C";
-    }
-    else if (average >= 50) {
-        grade = "D";
-    }
-    else {
-        grade = "F";
-    }
+    // Calculate grade
+    const grade = getGrade(average);
 
 
-    // ============================================
-    // PASS / FAIL
-    // ============================================
-
-    // Student MUST score at least 40 in EVERY subject
-    const hasFailedSubject = marks.some(function (mark) {
-        return mark < 40;
-    });
-
-    let status;
-
-    if (hasFailedSubject) {
-        status = "FAIL";
-    }
-    else {
-        status = "PASS";
-    }
+    // Check pass/fail
+    // Student must score at least 40 in EVERY subject
+    const passed = marks.every(mark => mark >= 40);
 
 
-    // ============================================
-    // DISPLAY RESULTS
-    // ============================================
-
-    totalMarksElement.textContent = total;
-    averageElement.textContent = average.toFixed(2);
-    gradeElement.textContent = grade;
-    statusElement.textContent = status;
+    const status = passed ? "PASS" : "FAIL";
 
 
-    // ============================================
-    // DISPLAY MESSAGE
-    // ============================================
+    // Display total
+    document.getElementById("totalMarks").textContent = total;
 
-    if (status === "PASS") {
 
-        messageElement.textContent =
+    // Display average
+    document.getElementById("average").textContent =
+        average.toFixed(2);
+
+
+    // Display grade
+    document.getElementById("grade").textContent = grade;
+
+
+    // Display pass/fail status
+    document.getElementById("status").textContent = status;
+
+
+    // Display message
+    const message = document.getElementById("resultMessage");
+
+    if (passed) {
+
+        message.textContent =
             "Congratulations! The student has passed all subjects successfully.";
 
-        // Optional CSS classes
-        statusElement.classList.remove("fail");
-        statusElement.classList.add("pass");
+        message.className = "success-message";
 
-        messageElement.classList.remove("fail-message");
-        messageElement.classList.add("success-message");
+    } else {
 
+        message.textContent =
+            "The student has failed because one or more subjects have marks below 40.";
+
+        message.className = "failure-message";
     }
-    else {
-
-        messageElement.textContent =
-            "The student has failed because one or more subjects are below 40 marks.";
-
-        statusElement.classList.remove("pass");
-        statusElement.classList.add("fail");
-
-        messageElement.classList.remove("success-message");
-        messageElement.classList.add("fail-message");
-    }
-
-});
+}
