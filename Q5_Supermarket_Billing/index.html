@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Supermarket Billing System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="header">
+
+        <div class="header-content">
+
+            <div>
+
+                <p class="eyebrow">
+                    Q5 • JAVASCRIPT ASSIGNMENT
+                </p>
+
+                <h1>
+                    Supermarket Billing System
+                </h1>
+
+                <p class="subtitle">
+                    Generate your customer bill quickly and accurately.
+                </p>
+
+            </div>
+
+            <div class="receipt-icon">
+                🧾
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="container">
+
+
+        <!-- =====================================
+             PRODUCT INPUT SECTION
+        ====================================== -->
+
+        <section class="card">
+
+            <div class="section-heading">
+
+                <p class="section-label">
+                    PRODUCTS
+                </p>
+
+                <h2>
+                    Enter Product Details
+                </h2>
+
+                <p>
+                    Enter the quantity and unit price
+                    for the three purchased products.
+                </p>
+
+            </div>
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="product-row">
+
+                <div class="product-number">
+                    01
+                </div>
+
+
+                <div class="product-details">
+
+                    <label for="product1">
+                        Product Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="product1"
+                        placeholder="Example: Rice"
+                    >
+
+                </div>
+
+
+                <div class="product-details">
+
+                    <label for="quantity1">
+                        Quantity
+                    </label>
+
+                    <input
+                        type="number"
+                        id="quantity1"
+                        min="1"
+                        step="1"
+                        placeholder="0"
+                    >
+
+                </div>
+
+
+                <div class="product-details">
+
+                    <label for="price1">
+                        Unit Price (₹)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="price1"
+                        min="0"
+                        step="0.01"
+                        placeholder="0.00"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="product-row">
+
+                <div class="product-number">
+                    02
+                </div>
+
+
+                <div class="product-details">
+
+                    <label for="product2">
+                        Product Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="product2"
+                        placeholder="Example: Milk"
+                    >
+
+                </div>
+
+
+                <div class="product-details">
+
+                    <label for="quantity2">
+                        Quantity
+                    </label>
+
+                    <input
+                        type="number"
+                        id="quantity2"
+                        min="1"
+                        step="1"
+                        placeholder="0"
+                    >
+
+                </div>
+
+
+                <div class="product-details">
+
+                    <label for="price2">
+                        Unit Price (₹)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="price2"
+                        min="0"
+                        step="0.01"
+                        placeholder="0.00"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="product-row">
+
+                <div class="product-number">
+                    03
+                </div>
+
+
+                <div class="product-details">
+
+                    <label for="product3">
+                        Product Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="product3"
+                        placeholder="Example: Oil"
+                    >
+
+                </div>
+
+
+                <div class="product-details">
+
+                    <label for="quantity3">
+                        Quantity
+                    </label>
+
+                    <input
+                        type="number"
+                        id="quantity3"
+                        min="1"
+                        step="1"
+                        placeholder="0"
+                    >
+
+                </div>
+
+
+                <div class="product-details">
+
+                    <label for="price3">
+                        Unit Price (₹)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="price3"
+                        min="0"
+                        step="0.01"
+                        placeholder="0.00"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- ERROR MESSAGE -->
+
+            <div
+                id="errorMessage"
+                class="error-message">
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="button-container">
+
+                <button
+                    type="button"
+                    id="calculateButton"
+                    class="calculate-button">
+
+                    Calculate Bill
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="resetButton"
+                    class="reset-button">
+
+                    Reset
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             BILL RESULT SECTION
+        ====================================== -->
+
+        <section class="card result-card">
+
+            <div class="section-heading">
+
+                <p class="section-label">
+                    BILL SUMMARY
+                </p>
+
+                <h2>
+                    Customer Bill
+                </h2>
+
+            </div>
+
+
+            <!-- BILL TABLE -->
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Product
+                            </th>
+
+                            <th>
+                                Quantity
+                            </th>
+
+                            <th>
+                                Unit Price
+                            </th>
+
+                            <th>
+                                Subtotal
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="billTableBody">
+
+                        <!-- JavaScript inserts bill rows here -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- BILL SUMMARY -->
+
+            <div class="bill-summary">
+
+                <div class="summary-row">
+
+                    <span>
+                        Total Bill
+                    </span>
+
+                    <strong id="totalAmount">
+                        ₹0.00
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row discount-row">
+
+                    <span>
+                        Discount
+                    </span>
+
+                    <strong id="discountAmount">
+                        ₹0.00
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row final-row">
+
+                    <span>
+                        Final Payable Amount
+                    </span>
+
+                    <strong id="finalAmount">
+                        ₹0.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- DISCOUNT MESSAGE -->
+
+            <div
+                id="discountMessage"
+                class="discount-message">
+
+                No discount applied.
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             JAVASCRIPT CONCEPTS
+        ====================================== -->
+
+        <section class="concept-card">
+
+            <h2>
+                JavaScript Concepts Demonstrated
+            </h2>
+
+
+            <div class="concept-grid">
+
+
+                <div class="concept">
+
+                    <span>
+                        01
+                    </span>
+
+                    <h3>
+                        Variables
+                    </h3>
+
+                    <p>
+                        Stores product names,
+                        quantities and prices.
+                    </p>
+
+                </div>
+
+
+                <div class="concept">
+
+                    <span>
+                        02
+                    </span>
+
+                    <h3>
+                        Data Types
+                    </h3>
+
+                    <p>
+                        Uses strings and numbers
+                        for bill calculations.
+                    </p>
+
+                </div>
+
+
+                <div class="concept">
+
+                    <span>
+                        03
+                    </span>
+
+                    <h3>
+                        Operators
+                    </h3>
+
+                    <p>
+                        Uses arithmetic and
+                        comparison operators.
+                    </p>
+
+                </div>
+
+
+                <div class="concept">
+
+                    <span>
+                        04
+                    </span>
+
+                    <h3>
+                        Functions
+                    </h3>
+
+                    <p>
+                        Uses user-defined functions
+                        for calculations.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        <p>
+            Web Technology Assignment I | 2026–2027
+        </p>
+
+        <p>
+            Q5 — Supermarket Billing System
+        </p>
+
+    </footer>
+
+
+    <!-- =========================================
+         JAVASCRIPT CONNECTION
+    ========================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
