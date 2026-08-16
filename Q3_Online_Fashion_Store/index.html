@@ -3,12 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="LUXE - Modern online fashion store">
+        content="LUXE Fashion Store - Discover modern fashion, trending collections and exclusive offers.">
 
     <title>LUXE | Fashion Store</title>
 
@@ -17,9 +15,9 @@
 
 <body>
 
-    <!-- =========================
+    <!-- ================================
          HEADER / NAVIGATION
-    ========================== -->
+    ================================= -->
 
     <header class="header">
 
@@ -29,17 +27,17 @@
                 LUXE<span>.</span>
             </a>
 
-            <nav class="navbar">
+            <nav class="navbar" aria-label="Main navigation">
 
                 <a href="#home">Home</a>
                 <a href="#collections">Collections</a>
-                <a href="#trending">Trending</a>
+                <a href="#products">Trending</a>
                 <a href="#offer">Offers</a>
                 <a href="#contact">Contact</a>
 
             </nav>
 
-            <a href="#trending" class="nav-button">
+            <a href="#products" class="nav-button">
                 Shop Now
             </a>
 
@@ -48,13 +46,15 @@
     </header>
 
 
-    <!-- =========================
-         HERO SECTION
-    ========================== -->
-
     <main>
 
+        <!-- ================================
+             HERO SECTION
+        ================================= -->
+
         <section class="hero" id="home">
+
+            <div class="hero-background"></div>
 
             <div class="hero-overlay"></div>
 
@@ -70,7 +70,7 @@
                 </h1>
 
                 <p class="hero-description">
-                    Discover premium fashion designed for
+                    Discover modern fashion designed for
                     confidence, comfort and individuality.
                 </p>
 
@@ -80,7 +80,7 @@
                         Explore Collection
                     </a>
 
-                    <a href="#trending" class="secondary-button">
+                    <a href="#products" class="secondary-button">
                         View Trending
                     </a>
 
@@ -96,15 +96,16 @@
         </section>
 
 
-        <!-- =========================
+        <!-- ================================
              INTRODUCTION
-        ========================== -->
+        ================================= -->
 
         <section class="intro">
 
-            <div class="container intro-content">
+            <div class="container intro-grid">
 
                 <div>
+
                     <p class="section-label">
                         LUXE FASHION
                     </p>
@@ -113,6 +114,7 @@
                         Fashion that speaks
                         <em>for you.</em>
                     </h2>
+
                 </div>
 
                 <p class="intro-text">
@@ -126,17 +128,18 @@
         </section>
 
 
-        <!-- =========================
+        <!-- ================================
              COLLECTIONS
-        ========================== -->
+        ================================= -->
 
-        <section class="collections section" id="collections">
+        <section class="section collections" id="collections">
 
             <div class="container">
 
                 <div class="section-heading">
 
                     <div>
+
                         <p class="section-label">
                             EXPLORE
                         </p>
@@ -144,6 +147,7 @@
                         <h2>
                             Featured Collections
                         </h2>
+
                     </div>
 
                     <p>
@@ -156,15 +160,15 @@
 
                 <div class="collection-grid">
 
-                    <!-- Collection 1 -->
+                    <!-- COLLECTION 1 -->
 
-                    <article class="collection-card men">
+                    <article class="collection-card collection-men">
 
-                        <div class="card-overlay"></div>
+                        <div class="collection-overlay"></div>
 
                         <div class="collection-content">
 
-                            <span>
+                            <span class="collection-number">
                                 01
                             </span>
 
@@ -176,7 +180,7 @@
                                 Sharp. Modern. Confident.
                             </p>
 
-                            <a href="#trending">
+                            <a href="#products">
                                 Explore →
                             </a>
 
@@ -185,15 +189,15 @@
                     </article>
 
 
-                    <!-- Collection 2 -->
+                    <!-- COLLECTION 2 -->
 
-                    <article class="collection-card women">
+                    <article class="collection-card collection-women">
 
-                        <div class="card-overlay"></div>
+                        <div class="collection-overlay"></div>
 
                         <div class="collection-content">
 
-                            <span>
+                            <span class="collection-number">
                                 02
                             </span>
 
@@ -205,7 +209,7 @@
                                 Elegant. Bold. Effortless.
                             </p>
 
-                            <a href="#trending">
+                            <a href="#products">
                                 Explore →
                             </a>
 
@@ -214,15 +218,15 @@
                     </article>
 
 
-                    <!-- Collection 3 -->
+                    <!-- COLLECTION 3 -->
 
-                    <article class="collection-card accessories">
+                    <article class="collection-card collection-accessories">
 
-                        <div class="card-overlay"></div>
+                        <div class="collection-overlay"></div>
 
                         <div class="collection-content">
 
-                            <span>
+                            <span class="collection-number">
                                 03
                             </span>
 
@@ -234,7 +238,7 @@
                                 Complete your signature look.
                             </p>
 
-                            <a href="#trending">
+                            <a href="#products">
                                 Explore →
                             </a>
 
@@ -249,11 +253,11 @@
         </section>
 
 
-        <!-- =========================
+        <!-- ================================
              TRENDING PRODUCTS
-        ========================== -->
+        ================================= -->
 
-        <section class="trending section" id="trending">
+        <section class="section products" id="products">
 
             <div class="container">
 
@@ -280,7 +284,7 @@
 
                 <div class="product-grid">
 
-                    <!-- Product 1 -->
+                    <!-- PRODUCT 1 -->
 
                     <article class="product-card">
 
@@ -290,8 +294,10 @@
                                 NEW
                             </span>
 
-                            <button class="wishlist"
-                                aria-label="Add product to wishlist">
+                            <button
+                                class="wishlist"
+                                type="button"
+                                aria-label="Add Urban Overshirt to wishlist">
                                 ♡
                             </button>
 
@@ -324,7 +330,7 @@
                     </article>
 
 
-                    <!-- Product 2 -->
+                    <!-- PRODUCT 2 -->
 
                     <article class="product-card">
 
@@ -334,8 +340,10 @@
                                 SALE
                             </span>
 
-                            <button class="wishlist"
-                                aria-label="Add product to wishlist">
+                            <button
+                                class="wishlist"
+                                type="button"
+                                aria-label="Add Minimalist Dress to wishlist">
                                 ♡
                             </button>
 
@@ -368,7 +376,7 @@
                     </article>
 
 
-                    <!-- Product 3 -->
+                    <!-- PRODUCT 3 -->
 
                     <article class="product-card">
 
@@ -378,8 +386,10 @@
                                 TRENDING
                             </span>
 
-                            <button class="wishlist"
-                                aria-label="Add product to wishlist">
+                            <button
+                                class="wishlist"
+                                type="button"
+                                aria-label="Add Classic Leather Bag to wishlist">
                                 ♡
                             </button>
 
@@ -412,7 +422,7 @@
                     </article>
 
 
-                    <!-- Product 4 -->
+                    <!-- PRODUCT 4 -->
 
                     <article class="product-card">
 
@@ -422,8 +432,10 @@
                                 NEW
                             </span>
 
-                            <button class="wishlist"
-                                aria-label="Add product to wishlist">
+                            <button
+                                class="wishlist"
+                                type="button"
+                                aria-label="Add Essential Sneakers to wishlist">
                                 ♡
                             </button>
 
@@ -462,11 +474,13 @@
         </section>
 
 
-        <!-- =========================
+        <!-- ================================
              PROMOTIONAL OFFER
-        ========================== -->
+        ================================= -->
 
         <section class="offer" id="offer">
+
+            <div class="offer-circle"></div>
 
             <div class="container offer-container">
 
@@ -486,8 +500,7 @@
                         from our latest collection.
                     </p>
 
-                    <a href="#trending"
-                        class="primary-button light-button">
+                    <a href="#products" class="primary-button">
                         Shop the Sale
                     </a>
 
@@ -502,11 +515,11 @@
         </section>
 
 
-        <!-- =========================
+        <!-- ================================
              FEATURES
-        ========================== -->
+        ================================= -->
 
-        <section class="features section">
+        <section class="section features">
 
             <div class="container">
 
@@ -519,6 +532,7 @@
                         </div>
 
                         <div>
+
                             <h3>
                                 Premium Quality
                             </h3>
@@ -527,6 +541,7 @@
                                 Carefully selected materials
                                 and refined craftsmanship.
                             </p>
+
                         </div>
 
                     </div>
@@ -539,6 +554,7 @@
                         </div>
 
                         <div>
+
                             <h3>
                                 Fast Delivery
                             </h3>
@@ -547,6 +563,7 @@
                                 Quick and reliable delivery
                                 across India.
                             </p>
+
                         </div>
 
                     </div>
@@ -559,6 +576,7 @@
                         </div>
 
                         <div>
+
                             <h3>
                                 Customer First
                             </h3>
@@ -567,6 +585,7 @@
                                 Designed around your
                                 shopping experience.
                             </p>
+
                         </div>
 
                     </div>
@@ -578,13 +597,13 @@
         </section>
 
 
-        <!-- =========================
-             NEWSLETTER / CONTACT
-        ========================== -->
+        <!-- ================================
+             NEWSLETTER
+        ================================= -->
 
         <section class="newsletter" id="contact">
 
-            <div class="container newsletter-container">
+            <div class="container newsletter-grid">
 
                 <div>
 
@@ -603,8 +622,8 @@
 
                 </div>
 
-                <form class="newsletter-form"
-                    onsubmit="return false;">
+
+                <form class="newsletter-form">
 
                     <label for="email">
                         Email Address
@@ -615,6 +634,7 @@
                         <input
                             type="email"
                             id="email"
+                            name="email"
                             placeholder="Enter your email"
                             required
                         >
@@ -625,6 +645,11 @@
 
                     </div>
 
+                    <small>
+                        By subscribing, you agree to receive
+                        fashion updates from LUXE.
+                    </small>
+
                 </form>
 
             </div>
@@ -634,15 +659,15 @@
     </main>
 
 
-    <!-- =========================
+    <!-- ================================
          FOOTER
-    ========================== -->
+    ================================= -->
 
     <footer class="footer">
 
         <div class="container footer-grid">
 
-            <div>
+            <div class="footer-brand">
 
                 <a href="#home" class="logo footer-logo">
                     LUXE<span>.</span>
@@ -663,7 +688,7 @@
 
                 <a href="#home">Home</a>
                 <a href="#collections">Collections</a>
-                <a href="#trending">Trending</a>
+                <a href="#products">Trending</a>
 
             </div>
 
@@ -699,7 +724,8 @@
         <div class="container footer-bottom">
 
             <p>
-                © 2026 LUXE Fashion Store. All rights reserved.
+                © 2026 LUXE Fashion Store.
+                All rights reserved.
             </p>
 
             <p>

@@ -1,11 +1,11 @@
 /* =========================================================
    LUXE FASHION STORE
-   Q3 - HTML5 & CSS3
+   Q3 - HTML5 + CSS3
    ========================================================= */
 
 
 /* =========================================================
-   GLOBAL RESET
+   RESET & GLOBAL STYLES
    ========================================================= */
 
 * {
@@ -28,6 +28,7 @@ body {
         sans-serif;
 
     background: #f7f5f2;
+
     color: #171717;
 
     line-height: 1.6;
@@ -51,14 +52,9 @@ button {
 }
 
 
-img {
-    max-width: 100%;
-    display: block;
-}
-
-
 .container {
     width: min(1180px, 92%);
+
     margin: 0 auto;
 }
 
@@ -74,15 +70,18 @@ img {
 
 .header {
     position: sticky;
+
     top: 0;
 
     z-index: 1000;
 
-    background: rgba(255, 255, 255, 0.95);
+    background:
+        rgba(255, 255, 255, 0.96);
 
     backdrop-filter: blur(12px);
 
-    border-bottom: 1px solid #e5e1dc;
+    border-bottom:
+        1px solid #e5e1dc;
 }
 
 
@@ -90,7 +89,9 @@ img {
     min-height: 78px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 30px;
@@ -103,8 +104,6 @@ img {
     font-weight: 900;
 
     letter-spacing: 5px;
-
-    color: #171717;
 }
 
 
@@ -142,9 +141,11 @@ img {
     position: absolute;
 
     left: 0;
+
     bottom: -8px;
 
     width: 0;
+
     height: 2px;
 
     background: #c58b55;
@@ -183,14 +184,14 @@ img {
 .nav-button:hover {
     background: #171717;
 
-    color: #fff;
+    color: white;
 
     transform: translateY(-2px);
 }
 
 
 /* =========================================================
-   HERO SECTION
+   HERO
    ========================================================= */
 
 .hero {
@@ -214,23 +215,24 @@ img {
 }
 
 
-.hero::before {
-    content: "";
-
+.hero-background {
     position: absolute;
 
-    width: 600px;
-    height: 600px;
+    width: 650px;
 
-    border-radius: 50%;
+    height: 650px;
 
     right: -180px;
-    top: -160px;
+
+    top: -120px;
+
+    border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(197, 139, 85, 0.55),
+            rgba(197, 139, 85, 0.6),
+            rgba(197, 139, 85, 0.15) 45%,
             transparent 70%
         );
 
@@ -247,8 +249,8 @@ img {
     background:
         linear-gradient(
             90deg,
-            rgba(0, 0, 0, 0.75),
-            rgba(0, 0, 0, 0.2)
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.18)
         );
 }
 
@@ -267,31 +269,31 @@ img {
 
 .hero-label,
 .section-label {
+    margin-bottom: 15px;
+
+    color: #c58b55;
+
     font-size: 0.75rem;
 
     font-weight: 800;
 
     letter-spacing: 4px;
-
-    color: #c58b55;
-
-    margin-bottom: 15px;
 }
 
 
 .hero h1 {
     max-width: 800px;
 
+    margin-bottom: 30px;
+
     font-size:
         clamp(4rem, 9vw, 8rem);
+
+    font-weight: 900;
 
     line-height: 0.9;
 
     letter-spacing: -5px;
-
-    font-weight: 900;
-
-    margin-bottom: 30px;
 
     text-transform: uppercase;
 }
@@ -302,10 +304,8 @@ img {
 
     color: transparent;
 
-    -webkit-text-stroke: 2px #fff;
-
-    text-shadow:
-        0 0 30px rgba(255, 255, 255, 0.1);
+    -webkit-text-stroke:
+        2px white;
 
     animation:
         textPulse 4s ease-in-out infinite;
@@ -315,11 +315,11 @@ img {
 .hero-description {
     max-width: 560px;
 
-    font-size: 1.1rem;
+    margin-bottom: 38px;
 
     color: #e2e2e2;
 
-    margin-bottom: 38px;
+    font-size: 1.1rem;
 }
 
 
@@ -348,21 +348,20 @@ img {
 
     font-weight: 800;
 
-    letter-spacing: 0.5px;
-
     transition:
         transform 0.3s ease,
         background 0.3s ease,
-        color 0.3s ease;
+        color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 
 .primary-button {
     background: #c58b55;
 
-    color: white;
-
     border: 1px solid #c58b55;
+
+    color: white;
 }
 
 
@@ -377,9 +376,10 @@ img {
 
 
 .secondary-button {
-    color: white;
+    border: 1px solid
+        rgba(255, 255, 255, 0.55);
 
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
 }
 
 
@@ -395,8 +395,9 @@ img {
 .scroll-indicator {
     position: absolute;
 
-    bottom: 35px;
-    right: 5%;
+    right: 4%;
+
+    bottom: 40px;
 
     z-index: 3;
 
@@ -414,16 +415,17 @@ img {
 
     text-transform: uppercase;
 
-    transform: rotate(90deg);
+    transform:
+        rotate(90deg);
 
-    transform-origin: right center;
+    transform-origin:
+        right center;
 }
 
 
 .scroll-indicator span {
-    display: block;
-
     width: 50px;
+
     height: 1px;
 
     background: #c58b55;
@@ -437,13 +439,14 @@ img {
 .intro {
     padding: 80px 0;
 
-    background: #fff;
+    background: white;
 
-    border-bottom: 1px solid #e5e1dc;
+    border-bottom:
+        1px solid #e5e1dc;
 }
 
 
-.intro-content {
+.intro-grid {
     display: grid;
 
     grid-template-columns:
@@ -518,7 +521,7 @@ img {
 
 
 /* =========================================================
-   COLLECTION CARDS
+   COLLECTIONS
    ========================================================= */
 
 .collection-grid {
@@ -540,45 +543,9 @@ img {
 
     border: 1px solid #ddd;
 
-    background-size: cover;
-
-    background-position: center;
-
     transition:
         transform 0.5s ease,
         box-shadow 0.5s ease;
-}
-
-
-/* Fashion-inspired CSS backgrounds */
-
-.collection-card.men {
-    background:
-        linear-gradient(
-            135deg,
-            #302e2c,
-            #8a786b
-        );
-}
-
-
-.collection-card.women {
-    background:
-        linear-gradient(
-            135deg,
-            #8c6d62,
-            #d5b5a8
-        );
-}
-
-
-.collection-card.accessories {
-    background:
-        linear-gradient(
-            135deg,
-            #1d1d1d,
-            #55504b
-        );
 }
 
 
@@ -589,16 +556,85 @@ img {
 
     inset: 15px;
 
-    border: 1px solid
-        rgba(255, 255, 255, 0.35);
+    z-index: 3;
 
-    z-index: 2;
+    border:
+        1px solid rgba(255, 255, 255, 0.4);
 
     pointer-events: none;
 }
 
 
-.card-overlay {
+.collection-men {
+    background:
+        linear-gradient(
+            135deg,
+            #302e2c,
+            #8a786b
+        );
+}
+
+
+.collection-women {
+    background:
+        linear-gradient(
+            135deg,
+            #8c6d62,
+            #d5b5a8
+        );
+}
+
+
+.collection-accessories {
+    background:
+        linear-gradient(
+            135deg,
+            #1d1d1d,
+            #55504b
+        );
+}
+
+
+.collection-card:hover {
+    transform:
+        translateY(-10px);
+
+    box-shadow:
+        0 25px 50px
+        rgba(0, 0, 0, 0.15);
+}
+
+
+.collection-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+
+    height: 220px;
+
+    right: -70px;
+
+    top: -70px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.2);
+
+    transition:
+        transform 0.6s ease;
+}
+
+
+.collection-card:hover::after {
+    transform:
+        scale(1.5);
+}
+
+
+.collection-overlay {
     position: absolute;
 
     inset: 0;
@@ -612,28 +648,22 @@ img {
 }
 
 
-.collection-card:hover {
-    transform: translateY(-10px);
-
-    box-shadow:
-        0 25px 50px rgba(0, 0, 0, 0.15);
-}
-
-
 .collection-content {
     position: absolute;
 
-    z-index: 3;
-
     left: 35px;
+
     right: 35px;
+
     bottom: 35px;
+
+    z-index: 4;
 
     color: white;
 }
 
 
-.collection-content > span {
+.collection-number {
     color: #c58b55;
 
     font-weight: 800;
@@ -643,16 +673,16 @@ img {
 
 
 .collection-content h3 {
-    font-size: 2rem;
-
     margin: 10px 0 5px;
+
+    font-size: 2rem;
 }
 
 
 .collection-content p {
-    color: #ddd;
-
     margin-bottom: 20px;
+
+    color: #ddd;
 }
 
 
@@ -661,7 +691,8 @@ img {
 
     padding-bottom: 5px;
 
-    border-bottom: 1px solid #c58b55;
+    border-bottom:
+        1px solid #c58b55;
 
     color: white;
 
@@ -674,18 +705,18 @@ img {
 
 
 .collection-content a:hover {
-    color: #c58b55;
-
     padding-left: 8px;
+
+    color: #c58b55;
 }
 
 
 /* =========================================================
-   TRENDING PRODUCTS
+   PRODUCTS
    ========================================================= */
 
-.trending {
-    background: #fff;
+.products {
+    background: white;
 }
 
 
@@ -700,11 +731,12 @@ img {
 
 
 .product-card {
-    background: #fff;
-
-    border: 1px solid #e2ded8;
-
     overflow: hidden;
+
+    background: white;
+
+    border:
+        1px solid #e2ded8;
 
     transition:
         transform 0.35s ease,
@@ -713,10 +745,12 @@ img {
 
 
 .product-card:hover {
-    transform: translateY(-8px);
+    transform:
+        translateY(-8px);
 
     box-shadow:
-        0 18px 40px rgba(0, 0, 0, 0.1);
+        0 18px 40px
+        rgba(0, 0, 0, 0.1);
 }
 
 
@@ -729,11 +763,7 @@ img {
 }
 
 
-/*
-   CSS-created fashion imagery.
-   These gradients keep the assignment
-   functional without requiring image files.
-*/
+/* CSS-created product visuals */
 
 .product-one {
     background:
@@ -846,6 +876,7 @@ img {
     position: absolute;
 
     top: 15px;
+
     left: 15px;
 
     z-index: 2;
@@ -872,32 +903,34 @@ img {
 .wishlist {
     position: absolute;
 
-    z-index: 2;
-
     top: 15px;
+
     right: 15px;
 
+    z-index: 2;
+
     width: 38px;
+
     height: 38px;
 
     border: none;
 
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.9);
+    background:
+        rgba(255, 255, 255, 0.9);
 
     font-size: 1.2rem;
 
     transition:
         transform 0.3s ease,
-        background 0.3s ease;
+        color 0.3s ease;
 }
 
 
 .wishlist:hover {
-    transform: scale(1.12);
-
-    background: #fff;
+    transform:
+        scale(1.12);
 
     color: #c58b55;
 }
@@ -909,6 +942,8 @@ img {
 
 
 .product-category {
+    margin-bottom: 7px;
+
     color: #999;
 
     font-size: 0.65rem;
@@ -916,15 +951,13 @@ img {
     font-weight: 800;
 
     letter-spacing: 1.5px;
-
-    margin-bottom: 7px;
 }
 
 
 .product-info h3 {
-    font-size: 1.1rem;
-
     margin-bottom: 18px;
+
+    font-size: 1.1rem;
 }
 
 
@@ -939,8 +972,6 @@ img {
 
 .price {
     font-weight: 900;
-
-    color: #171717;
 }
 
 
@@ -954,7 +985,7 @@ img {
 
 
 /* =========================================================
-   PROMOTIONAL OFFER
+   OFFER
    ========================================================= */
 
 .offer {
@@ -975,21 +1006,22 @@ img {
 }
 
 
-.offer::before {
-    content: "";
-
+.offer-circle {
     position: absolute;
 
     width: 450px;
+
     height: 450px;
 
     right: -100px;
+
     top: -200px;
 
-    border-radius: 50%;
-
-    border: 1px solid
+    border:
+        1px solid
         rgba(197, 139, 85, 0.4);
+
+    border-radius: 50%;
 
     animation:
         rotateCircle 12s linear infinite;
@@ -997,6 +1029,10 @@ img {
 
 
 .offer-container {
+    position: relative;
+
+    z-index: 2;
+
     display: flex;
 
     align-items: center;
@@ -1013,14 +1049,14 @@ img {
 
 
 .offer h2 {
+    margin-bottom: 25px;
+
     font-size:
         clamp(3rem, 7vw, 6rem);
 
     line-height: 0.95;
 
     letter-spacing: -4px;
-
-    margin-bottom: 25px;
 }
 
 
@@ -1030,34 +1066,26 @@ img {
 
 
 .offer-content > p:not(.section-label) {
-    color: #d1cbc6;
-
     max-width: 480px;
 
     margin-bottom: 30px;
-}
 
-
-.light-button {
-    color: white;
+    color: #d1cbc6;
 }
 
 
 .offer-number {
-    position: relative;
-
-    z-index: 2;
-
     font-size:
         clamp(6rem, 15vw, 13rem);
 
-    line-height: 1;
-
     font-weight: 900;
+
+    line-height: 1;
 
     color: transparent;
 
-    -webkit-text-stroke: 2px #c58b55;
+    -webkit-text-stroke:
+        2px #c58b55;
 }
 
 
@@ -1081,9 +1109,11 @@ img {
     grid-template-columns:
         repeat(3, 1fr);
 
-    border-top: 1px solid #dcd7d1;
+    border-top:
+        1px solid #dcd7d1;
 
-    border-bottom: 1px solid #dcd7d1;
+    border-bottom:
+        1px solid #dcd7d1;
 }
 
 
@@ -1094,7 +1124,8 @@ img {
 
     padding: 35px;
 
-    border-right: 1px solid #dcd7d1;
+    border-right:
+        1px solid #dcd7d1;
 }
 
 
@@ -1107,13 +1138,15 @@ img {
     flex-shrink: 0;
 
     width: 45px;
+
     height: 45px;
 
     display: grid;
 
     place-items: center;
 
-    border: 1px solid #c58b55;
+    border:
+        1px solid #c58b55;
 
     color: #c58b55;
 
@@ -1122,9 +1155,9 @@ img {
 
 
 .feature-item h3 {
-    font-size: 1rem;
-
     margin-bottom: 7px;
+
+    font-size: 1rem;
 }
 
 
@@ -1144,11 +1177,12 @@ img {
 
     background: white;
 
-    border-top: 1px solid #e3dfd9;
+    border-top:
+        1px solid #e3dfd9;
 }
 
 
-.newsletter-container {
+.newsletter-grid {
     display: grid;
 
     grid-template-columns:
@@ -1161,21 +1195,21 @@ img {
 
 
 .newsletter h2 {
+    margin-bottom: 15px;
+
     font-size:
         clamp(2.5rem, 5vw, 4.5rem);
 
     line-height: 1;
 
     letter-spacing: -2px;
-
-    margin-bottom: 15px;
 }
 
 
 .newsletter p:not(.section-label) {
-    color: #777;
-
     max-width: 500px;
+
+    color: #777;
 }
 
 
@@ -1197,7 +1231,8 @@ img {
 .email-box {
     display: flex;
 
-    border-bottom: 2px solid #171717;
+    border-bottom:
+        2px solid #171717;
 }
 
 
@@ -1206,26 +1241,26 @@ img {
 
     min-width: 0;
 
+    padding: 16px 5px;
+
     border: none;
 
     outline: none;
 
     background: transparent;
 
-    padding: 16px 5px;
-
     font-size: 1rem;
 }
 
 
 .email-box button {
+    padding: 0 25px;
+
     border: none;
 
     background: #171717;
 
     color: white;
-
-    padding: 0 25px;
 
     font-weight: 800;
 
@@ -1239,16 +1274,27 @@ img {
 }
 
 
+.newsletter-form small {
+    display: block;
+
+    margin-top: 12px;
+
+    color: #999;
+
+    font-size: 0.7rem;
+}
+
+
 /* =========================================================
    FOOTER
    ========================================================= */
 
 .footer {
+    padding-top: 70px;
+
     background: #171717;
 
     color: white;
-
-    padding-top: 70px;
 }
 
 
@@ -1265,29 +1311,29 @@ img {
 
 
 .footer-logo {
-    color: white;
-
     display: inline-block;
 
     margin-bottom: 15px;
+
+    color: white;
 }
 
 
-.footer-grid > div:first-child p {
-    color: #999;
-
+.footer-brand p {
     max-width: 260px;
+
+    color: #999;
 
     font-size: 0.9rem;
 }
 
 
 .footer h3 {
-    font-size: 0.85rem;
-
     margin-bottom: 20px;
 
     color: #c58b55;
+
+    font-size: 0.85rem;
 
     letter-spacing: 1px;
 
@@ -1295,14 +1341,14 @@ img {
 }
 
 
-.footer-grid div:not(:first-child) a {
+.footer-grid div:not(.footer-brand) a {
     display: block;
+
+    margin-bottom: 10px;
 
     color: #999;
 
     font-size: 0.85rem;
-
-    margin-bottom: 10px;
 
     transition:
         color 0.3s ease,
@@ -1310,10 +1356,10 @@ img {
 }
 
 
-.footer-grid div:not(:first-child) a:hover {
-    color: white;
-
+.footer-grid div:not(.footer-brand) a:hover {
     padding-left: 5px;
+
+    color: white;
 }
 
 
@@ -1326,7 +1372,8 @@ img {
 
     padding: 22px 0;
 
-    border-top: 1px solid #333;
+    border-top:
+        1px solid #333;
 
     color: #777;
 
@@ -1335,7 +1382,7 @@ img {
 
 
 /* =========================================================
-   ANIMATIONS
+   CSS ANIMATIONS
    ========================================================= */
 
 @keyframes heroReveal {
@@ -1377,7 +1424,7 @@ img {
 
     0%,
     100% {
-        opacity: 0.8;
+        opacity: 0.75;
     }
 
     50% {
@@ -1401,7 +1448,7 @@ img {
 
 
 /* =========================================================
-   RESPONSIVE DESIGN
+   TABLET RESPONSIVENESS
    ========================================================= */
 
 @media (max-width: 950px) {
@@ -1416,7 +1463,7 @@ img {
     }
 
 
-    .intro-content {
+    .intro-grid {
         grid-template-columns: 1fr;
 
         gap: 30px;
@@ -1449,7 +1496,8 @@ img {
     .feature-item {
         border-right: none;
 
-        border-bottom: 1px solid #dcd7d1;
+        border-bottom:
+            1px solid #dcd7d1;
     }
 
 
@@ -1458,7 +1506,7 @@ img {
     }
 
 
-    .newsletter-container {
+    .newsletter-grid {
         grid-template-columns: 1fr;
 
         gap: 45px;
@@ -1472,6 +1520,10 @@ img {
 
 }
 
+
+/* =========================================================
+   MOBILE RESPONSIVENESS
+   ========================================================= */
 
 @media (max-width: 700px) {
 
@@ -1519,7 +1571,7 @@ img {
 
 
     .section-heading {
-        align-items: start;
+        align-items: flex-start;
 
         flex-direction: column;
 
@@ -1553,7 +1605,7 @@ img {
     .offer-container {
         flex-direction: column;
 
-        align-items: start;
+        align-items: flex-start;
     }
 
 
@@ -1568,7 +1620,8 @@ img {
 
 
     .footer-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            1fr 1fr;
 
         gap: 40px 25px;
     }
@@ -1582,6 +1635,10 @@ img {
 
 }
 
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
 
 @media (max-width: 450px) {
 
@@ -1611,9 +1668,10 @@ img {
 
 
     .email-box input {
-        border-bottom: 2px solid #171717;
-
         margin-bottom: 10px;
+
+        border-bottom:
+            2px solid #171717;
     }
 
 
@@ -1625,7 +1683,7 @@ img {
 
 
 /* =========================================================
-   ACCESSIBILITY / REDUCED MOTION
+   REDUCED MOTION ACCESSIBILITY
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -1638,11 +1696,14 @@ img {
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important;
+        animation-duration:
+            0.01ms !important;
 
-        animation-iteration-count: 1 !important;
+        animation-iteration-count:
+            1 !important;
 
-        transition-duration: 0.01ms !important;
+        transition-duration:
+            0.01ms !important;
     }
 
 }
