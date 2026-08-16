@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Student Grade Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Main Application -->
+    <main class="app">
+
+        <!-- Header -->
+        <section class="header">
+
+            <p class="subtitle">
+                SCHOOL ACADEMIC SYSTEM
+            </p>
+
+            <h1>
+                Student Grade Calculator
+            </h1>
+
+            <p class="description">
+                Enter marks for five subjects to calculate
+                total, average, grade and pass/fail status.
+            </p>
+
+        </section>
+
+
+        <!-- Calculator Card -->
+        <section class="calculator-card">
+
+            <form id="gradeForm">
+
+                <div class="form-header">
+
+                    <h2>
+                        Enter Student Marks
+                    </h2>
+
+                    <p>
+                        Enter marks between 0 and 100.
+                    </p>
+
+                </div>
+
+
+                <!-- Subject Inputs -->
+
+                <div class="subjects">
+
+                    <div class="subject">
+
+                        <label for="subject1">
+                            Subject 1
+                        </label>
+
+                        <input
+                            type="number"
+                            id="subject1"
+                            min="0"
+                            max="100"
+                            placeholder="Enter marks"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="subject">
+
+                        <label for="subject2">
+                            Subject 2
+                        </label>
+
+                        <input
+                            type="number"
+                            id="subject2"
+                            min="0"
+                            max="100"
+                            placeholder="Enter marks"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="subject">
+
+                        <label for="subject3">
+                            Subject 3
+                        </label>
+
+                        <input
+                            type="number"
+                            id="subject3"
+                            min="0"
+                            max="100"
+                            placeholder="Enter marks"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="subject">
+
+                        <label for="subject4">
+                            Subject 4
+                        </label>
+
+                        <input
+                            type="number"
+                            id="subject4"
+                            min="0"
+                            max="100"
+                            placeholder="Enter marks"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="subject">
+
+                        <label for="subject5">
+                            Subject 5
+                        </label>
+
+                        <input
+                            type="number"
+                            id="subject5"
+                            min="0"
+                            max="100"
+                            placeholder="Enter marks"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Buttons -->
+
+                <div class="buttons">
+
+                    <button
+                        type="submit"
+                        class="calculate-btn">
+                        Calculate Result
+                    </button>
+
+                    <button
+                        type="reset"
+                        class="reset-btn"
+                        id="resetBtn">
+                        Reset
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- Result Section -->
+
+            <section
+                class="result"
+                id="result"
+                aria-live="polite">
+
+                <div class="result-header">
+
+                    <p>
+                        RESULT
+                    </p>
+
+                    <h2>
+                        Academic Performance
+                    </h2>
+
+                </div>
+
+
+                <div class="result-grid">
+
+                    <div class="result-box">
+
+                        <span>
+                            Total Marks
+                        </span>
+
+                        <strong id="total">
+                            0
+                        </strong>
+
+                        <small>
+                            / 500
+                        </small>
+
+                    </div>
+
+
+                    <div class="result-box">
+
+                        <span>
+                            Average
+                        </span>
+
+                        <strong id="average">
+                            0
+                        </strong>
+
+                        <small>
+                            %
+                        </small>
+
+                    </div>
+
+
+                    <div class="result-box">
+
+                        <span>
+                            Grade
+                        </span>
+
+                        <strong id="grade">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="result-box status-box">
+
+                        <span>
+                            Status
+                        </span>
+
+                        <strong id="status">
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="message"
+                    id="message">
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- Grading Information -->
+
+        <section class="grading-scale">
+
+            <h2>
+                Grading Scale
+            </h2>
+
+            <div class="scale-grid">
+
+                <div>
+                    <strong>A+</strong>
+                    <span>90 - 100</span>
+                </div>
+
+                <div>
+                    <strong>A</strong>
+                    <span>80 - 89</span>
+                </div>
+
+                <div>
+                    <strong>B</strong>
+                    <span>70 - 79</span>
+                </div>
+
+                <div>
+                    <strong>C</strong>
+                    <span>60 - 69</span>
+                </div>
+
+                <div>
+                    <strong>D</strong>
+                    <span>50 - 59</span>
+                </div>
+
+                <div>
+                    <strong>F</strong>
+                    <span>Below 50</span>
+                </div>
+
+            </div>
+
+            <p class="note">
+                A student must score at least 40 marks
+                in every subject to pass.
+            </p>
+
+        </section>
+
+
+        <!-- Footer -->
+
+        <footer>
+
+            <p>
+                Web Technology Assignment • Q4
+            </p>
+
+            <p>
+                Student Grade Calculation System
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

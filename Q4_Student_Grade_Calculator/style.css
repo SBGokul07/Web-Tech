@@ -1,0 +1,682 @@
+/* =========================================================
+   Q4 - STUDENT GRADE CALCULATOR
+   CSS3 STYLING
+   ========================================================= */
+
+
+/* ---------- Reset ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ---------- Body ---------- */
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #f8fafc
+        );
+
+    color: #172033;
+
+    line-height: 1.6;
+}
+
+
+/* ---------- Main Application ---------- */
+
+.app {
+
+    width: min(1050px, 92%);
+
+    margin: auto;
+
+    padding: 55px 0;
+}
+
+
+/* ---------- Header ---------- */
+
+.header {
+
+    margin-bottom: 35px;
+
+    text-align: center;
+}
+
+
+.subtitle {
+
+    margin-bottom: 8px;
+
+    color: #5b5bd6;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.header h1 {
+
+    margin-bottom: 12px;
+
+    font-size:
+        clamp(2.2rem, 5vw, 4rem);
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+}
+
+
+.description {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    color: #667085;
+
+    font-size: 1rem;
+}
+
+
+/* ---------- Calculator Card ---------- */
+
+.calculator-card {
+
+    padding: 35px;
+
+    background: white;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(30, 41, 59, 0.08);
+}
+
+
+/* ---------- Form Header ---------- */
+
+.form-header {
+
+    margin-bottom: 30px;
+}
+
+
+.form-header h2 {
+
+    margin-bottom: 5px;
+
+    font-size: 1.5rem;
+}
+
+
+.form-header p {
+
+    color: #667085;
+
+    font-size: 0.9rem;
+}
+
+
+/* ---------- Subject Grid ---------- */
+
+.subjects {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.subject {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.subject label {
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+
+    color: #344054;
+}
+
+
+.subject input {
+
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border:
+        1px solid #d0d5dd;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #fcfcfd;
+
+    color: #172033;
+
+    font-size: 1rem;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.subject input:focus {
+
+    background: white;
+
+    border-color: #5b5bd6;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(91, 91, 214, 0.12);
+}
+
+
+.subject input:invalid:not(:placeholder-shown) {
+
+    border-color: #e05252;
+}
+
+
+/* ---------- Buttons ---------- */
+
+.buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+
+.calculate-btn,
+.reset-btn {
+
+    min-height: 50px;
+
+    padding: 0 25px;
+
+    border-radius: 9px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.calculate-btn {
+
+    flex: 1;
+
+    border:
+        1px solid #5b5bd6;
+
+    background: #5b5bd6;
+
+    color: white;
+}
+
+
+.calculate-btn:hover {
+
+    background: #4848bd;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 20px
+        rgba(91, 91, 214, 0.2);
+}
+
+
+.reset-btn {
+
+    border:
+        1px solid #d0d5dd;
+
+    background: white;
+
+    color: #344054;
+}
+
+
+.reset-btn:hover {
+
+    background: #f2f4f7;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* ---------- Result ---------- */
+
+.result {
+
+    margin-top: 35px;
+
+    padding-top: 35px;
+
+    border-top:
+        1px solid #eaecf0;
+}
+
+
+.result-header {
+
+    margin-bottom: 22px;
+}
+
+
+.result-header p {
+
+    margin-bottom: 4px;
+
+    color: #5b5bd6;
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.result-header h2 {
+
+    font-size: 1.4rem;
+}
+
+
+/* ---------- Result Grid ---------- */
+
+.result-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+
+.result-box {
+
+    min-height: 135px;
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    border:
+        1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    background: #f8fafc;
+}
+
+
+.result-box span {
+
+    margin-bottom: 8px;
+
+    color: #667085;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+.result-box strong {
+
+    color: #172033;
+
+    font-size: 2rem;
+
+    line-height: 1;
+}
+
+
+.result-box small {
+
+    margin-top: 5px;
+
+    color: #98a2b3;
+}
+
+
+.status-box {
+
+    border-color:
+        rgba(91, 91, 214, 0.25);
+
+    background:
+        rgba(91, 91, 214, 0.05);
+}
+
+
+/* ---------- Result Message ---------- */
+
+.message {
+
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border-radius: 9px;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+}
+
+
+.message.show {
+
+    display: block;
+
+    animation:
+        fadeIn 0.4s ease;
+}
+
+
+.message.pass {
+
+    background: #ecfdf3;
+
+    border:
+        1px solid #abefc6;
+
+    color: #067647;
+}
+
+
+.message.fail {
+
+    background: #fef3f2;
+
+    border:
+        1px solid #fecdca;
+
+    color: #b42318;
+}
+
+
+/* ---------- Grading Scale ---------- */
+
+.grading-scale {
+
+    margin-top: 25px;
+
+    padding: 30px;
+
+    background: #172033;
+
+    border-radius: 18px;
+
+    color: white;
+
+    box-shadow:
+        0 15px 35px
+        rgba(30, 41, 59, 0.12);
+}
+
+
+.grading-scale h2 {
+
+    margin-bottom: 20px;
+
+    font-size: 1.2rem;
+}
+
+
+.scale-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 10px;
+}
+
+
+.scale-grid div {
+
+    padding: 15px 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+
+    border:
+        1px solid #344054;
+
+    border-radius: 8px;
+
+    background:
+        rgba(255, 255, 255, 0.04);
+}
+
+
+.scale-grid strong {
+
+    color: #a5b4fc;
+
+    font-size: 1.3rem;
+}
+
+
+.scale-grid span {
+
+    color: #cbd5e1;
+
+    font-size: 0.7rem;
+}
+
+
+.note {
+
+    margin-top: 20px;
+
+    color: #98a2b3;
+
+    font-size: 0.75rem;
+
+    text-align: center;
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+
+    padding-top: 30px;
+
+    text-align: center;
+
+    color: #667085;
+
+    font-size: 0.75rem;
+}
+
+
+footer p:first-child {
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .result-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .scale-grid {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .app {
+
+        padding: 30px 0;
+    }
+
+
+    .calculator-card {
+
+        padding: 22px;
+    }
+
+
+    .subjects {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .buttons {
+
+        flex-direction: column;
+    }
+
+
+    .calculate-btn {
+
+        flex: auto;
+    }
+
+
+    .result-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .scale-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .scale-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+}
