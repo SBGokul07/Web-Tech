@@ -1,0 +1,106 @@
+/* admin.css - styles for the PHP admin panel */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f1f4f8;
+    color: #222;
+    font-size: 15px;
+}
+
+/* top navigation bar */
+.topbar {
+    background: #1f4e8c;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 30px;
+}
+.brand { font-size: 1.25rem; font-weight: 700; }
+.brand span { font-weight: 400; opacity: 0.8; font-size: 0.95rem; }
+.topbar nav a { color: #fff; text-decoration: none; margin-left: 18px; }
+.topbar .nav-btn { background: #fff; color: #1f4e8c; padding: 7px 14px; border-radius: 5px; font-weight: 600; }
+
+.wrap { max-width: 1100px; margin: 25px auto; padding: 0 15px; }
+
+.page-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px; }
+.page-head small { color: #777; font-weight: normal; font-size: 0.9rem; }
+.search { display: flex; gap: 6px; }
+.search input { padding: 8px 10px; border: 1px solid #c5ced9; border-radius: 5px; width: 260px; }
+
+.card {
+    background: #fff;
+    padding: 22px 26px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    margin-bottom: 20px;
+}
+.card h2, .card h3 { color: #1f4e8c; margin-bottom: 14px; }
+
+/* buttons */
+.btn {
+    display: inline-block;
+    background: #1f4e8c;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.btn:hover { opacity: 0.9; }
+.btn-light  { background: #e2e7ee; color: #333; }
+.btn-warn   { background: #e8a317; }
+.btn-danger { background: #c62828; }
+.btn-sm     { padding: 5px 10px; font-size: 0.8rem; }
+form.inline { display: inline; }
+
+/* tables */
+.table-box { background: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06); overflow-x: auto; }
+table.list { width: 100%; border-collapse: collapse; }
+table.list th { background: #e9eef5; text-align: left; padding: 10px 12px; font-size: 0.85rem; color: #333; }
+table.list td { padding: 9px 12px; border-top: 1px solid #edf0f4; vertical-align: middle; font-size: 0.9rem; }
+table.list tr:hover td { background: #fafbfd; }
+.actions { white-space: nowrap; }
+
+.thumb { width: 46px; height: 54px; object-fit: cover; border-radius: 4px; border: 1px solid #ddd; }
+.doc-thumb { width: 96px; height: 60px; object-fit: cover; border-radius: 4px; border: 1px solid #ddd; }
+.no-photo { font-size: 0.75rem; color: #999; }
+.no-photo.big {
+    width: 160px; height: 190px; display: flex; align-items: center; justify-content: center;
+    background: #eceff3; border-radius: 6px; font-size: 1rem;
+}
+
+/* forms */
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px; }
+.form-grid label { display: flex; flex-direction: column; font-weight: 600; font-size: 0.88rem; gap: 5px; }
+.form-grid small { font-weight: normal; color: #777; }
+.form-grid input[type="text"], .form-grid input[type="email"], .form-grid select {
+    padding: 9px 10px; border: 1px solid #c5ced9; border-radius: 5px; font-size: 0.95rem;
+}
+.form-actions { grid-column: 1 / -1; display: flex; justify-content: flex-end; gap: 10px; margin-top: 6px; }
+.form-actions.left { justify-content: flex-start; }
+
+/* messages */
+.alert { padding: 12px 16px; border-radius: 6px; margin-bottom: 16px; font-size: 0.9rem; }
+.alert.success { background: #e6f4ea; color: #1e6b34; border-left: 5px solid #34a853; }
+.alert.error   { background: #fdecea; color: #a52714; border-left: 5px solid #d93025; }
+.alert ul { margin: 6px 0 0 20px; }
+.empty { color: #777; padding: 10px 0; }
+
+/* profile view */
+.profile { display: flex; gap: 30px; align-items: flex-start; }
+.profile-photo img { width: 160px; height: 190px; object-fit: cover; border-radius: 6px; border: 1px solid #ddd; }
+.profile-info { flex: 1; }
+table.details th { text-align: left; padding: 6px 20px 6px 0; color: #555; width: 140px; }
+table.details td { padding: 6px 0; }
+
+.foot { text-align: center; color: #888; font-size: 0.8rem; padding: 20px 0; }
+
+@media (max-width: 700px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .profile { flex-direction: column; }
+    .topbar { flex-direction: column; gap: 8px; }
+}

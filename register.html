@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- viewport tag is needed so the page scales properly on mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration | Admission Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="top-bar">
+        <h1>KPR Institute of Engineering and Technology</h1>
+        <p>Student Admission Portal 2026 - 2027</p>
+    </header>
+
+    <main class="container">
+        <!-- novalidate turns off the browser popups, our own JS shows the messages -->
+        <form id="regForm" action="#" method="post" enctype="multipart/form-data" novalidate>
+            <h2>Student Registration Form</h2>
+            <p class="hint">Fields marked with <span class="req">*</span> are mandatory.</p>
+
+            <!-- Personal details -->
+            <fieldset>
+                <legend>Personal Details</legend>
+                <div class="row">
+                    <div class="field">
+                        <label for="fullName">Full Name <span class="req">*</span></label>
+                        <input type="text" id="fullName" name="fullName" placeholder="e.g. Arun Kumar S">
+                        <small class="error"></small>
+                    </div>
+                    <div class="field">
+                        <label for="rollNo">Roll Number <span class="req">*</span></label>
+                        <input type="text" id="rollNo" name="rollNo" placeholder="e.g. 23CS101" maxlength="9">
+                        <small class="error"></small>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="field">
+                        <label for="email">Email ID <span class="req">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="e.g. arun@gmail.com">
+                        <small class="error"></small>
+                    </div>
+                    <div class="field">
+                        <label for="mobile">Mobile Number <span class="req">*</span></label>
+                        <input type="tel" id="mobile" name="mobile" placeholder="10 digit number" maxlength="10">
+                        <small class="error"></small>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="field">
+                        <label for="course">Course <span class="req">*</span></label>
+                        <select id="course" name="course">
+                            <option value="">-- Select Course --</option>
+                            <option value="B.E. CSE">B.E. Computer Science and Engineering</option>
+                            <option value="B.Tech IT">B.Tech Information Technology</option>
+                            <option value="B.Tech AI&amp;DS">B.Tech AI and Data Science</option>
+                            <option value="B.E. ECE">B.E. Electronics and Communication</option>
+                            <option value="B.E. EEE">B.E. Electrical and Electronics</option>
+                            <option value="B.E. MECH">B.E. Mechanical Engineering</option>
+                        </select>
+                        <small class="error"></small>
+                    </div>
+                    <div class="field">
+                        <label>Gender <span class="req">*</span></label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="gender" value="Male"> Male</label>
+                            <label><input type="radio" name="gender" value="Female"> Female</label>
+                            <label><input type="radio" name="gender" value="Other"> Other</label>
+                        </div>
+                        <small class="error"></small>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Login details -->
+            <fieldset>
+                <legend>Account Password</legend>
+                <div class="row">
+                    <div class="field">
+                        <label for="password">Password <span class="req">*</span></label>
+                        <input type="password" id="password" name="password" placeholder="Min. 8 characters">
+                        <!-- strength bar, width and colour are changed from JS -->
+                        <div class="strength"><div id="strengthBar"></div></div>
+                        <span id="strengthText" class="strength-text"></span>
+                        <ul class="rules" id="pwdRules">
+                            <li data-rule="len">At least 8 characters</li>
+                            <li data-rule="upper">One uppercase letter</li>
+                            <li data-rule="lower">One lowercase letter</li>
+                            <li data-rule="digit">One number</li>
+                            <li data-rule="special">One special character (@ # $ % etc.)</li>
+                        </ul>
+                        <small class="error"></small>
+                    </div>
+                    <div class="field">
+                        <label for="confirmPassword">Confirm Password <span class="req">*</span></label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password">
+                        <small class="error"></small>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- File uploads -->
+            <fieldset>
+                <legend>Documents</legend>
+                <div class="row">
+                    <div class="field">
+                        <label for="photo">Passport Size Photo <span class="req">*</span></label>
+                        <input type="file" id="photo" name="photo" accept=".jpg,.jpeg,.png">
+                        <span class="file-note">JPG / PNG only, maximum 2 MB</span>
+                        <img id="photoPreview" class="preview" alt="Photo preview">
+                        <small class="error"></small>
+                    </div>
+                    <div class="field">
+                        <label for="marksheet">12th Mark Sheet (optional)</label>
+                        <input type="file" id="marksheet" name="marksheet" accept=".pdf">
+                        <span class="file-note">PDF only, maximum 5 MB</span>
+                        <small class="error"></small>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="field">
+                <label class="check">
+                    <input type="checkbox" id="agree" name="agree">
+                    I hereby declare that the details given above are true to the best of my knowledge.
+                </label>
+                <small class="error"></small>
+            </div>
+
+            <div class="buttons">
+                <button type="reset" class="btn btn-light" id="resetBtn">Clear</button>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </form>
+
+        <!-- shown only after every check passes -->
+        <div id="successBox" class="success-box" hidden>
+            <h3>Registration Successful</h3>
+            <p id="successMsg"></p>
+            <button class="btn btn-primary" id="newEntry">Register another student</button>
+        </div>
+    </main>
+
+    <footer class="foot">&copy; 2026 KPR Institute of Engineering and Technology, Coimbatore</footer>
+
+    <script src="js/validate.js"></script>
+</body>
+</html>

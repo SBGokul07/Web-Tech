@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- web.xml - deployment descriptor for the Student Profile Portal (Tomcat 10 / Jakarta EE) -->
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <display-name>Student Profile Portal</display-name>
+
+    <!-- folder where the PHP admin panel saves the uploaded files.
+         Both projects share the same folder, so files uploaded from PHP can be shown here. -->
+    <context-param>
+        <param-name>uploadDirectory</param-name>
+        <param-value>C:/xampp/htdocs/student_admin/uploads</param-value>
+    </context-param>
+
+    <!-- ===================== Servlets ===================== -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.kpr.portal.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.kpr.portal.servlet.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StudentListServlet</servlet-name>
+        <servlet-class>com.kpr.portal.servlet.StudentListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentListServlet</servlet-name>
+        <url-pattern>/students</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ProfileServlet</servlet-name>
+        <servlet-class>com.kpr.portal.servlet.ProfileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProfileServlet</servlet-name>
+        <url-pattern>/profile</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FileServlet</servlet-name>
+        <servlet-class>com.kpr.portal.servlet.FileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FileServlet</servlet-name>
+        <url-pattern>/file</url-pattern>
+    </servlet-mapping>
+
+    <!-- ===================== Login check ===================== -->
+    <!-- every URL listed here can be opened only after login -->
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>com.kpr.portal.filter.AuthFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/students</url-pattern>
+        <url-pattern>/profile</url-pattern>
+        <url-pattern>/file</url-pattern>
+    </filter-mapping>
+
+    <!-- ===================== Session settings ===================== -->
+    <session-config>
+        <session-timeout>15</session-timeout>      <!-- minutes -->
+        <cookie-config>
+            <http-only>true</http-only>            <!-- JavaScript cannot read the session cookie -->
+        </cookie-config>
+        <tracking-mode>COOKIE</tracking-mode>      <!-- no jsessionid in the URL -->
+    </session-config>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>

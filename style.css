@@ -1,0 +1,189 @@
+/* style.css - styles for the student registration page */
+
+/* colours kept in variables so they can be changed in one place */
+:root {
+    --primary: #1f4e8c;
+    --primary-dark: #163a69;
+    --bg: #eef2f7;
+    --text: #222;
+    --border: #c9d2de;
+    --error: #d93025;
+    --success: #188038;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+/* ---------- header ---------- */
+.top-bar {
+    background: var(--primary);
+    color: #fff;
+    text-align: center;
+    padding: 18px 10px;
+}
+.top-bar h1 { font-size: 1.5rem; }
+.top-bar p  { font-size: 0.95rem; opacity: 0.9; }
+
+/* ---------- form card ---------- */
+.container {
+    max-width: 860px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+form, .success-box {
+    background: #fff;
+    padding: 28px 32px;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+form h2 {
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+.hint { font-size: 0.85rem; color: #666; margin-bottom: 18px; }
+.req  { color: var(--error); }
+
+fieldset {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 18px 4px;
+    margin-bottom: 18px;
+}
+legend {
+    padding: 0 8px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* two fields side by side on bigger screens */
+.row {
+    display: flex;
+    gap: 20px;
+}
+.field {
+    flex: 1;
+    margin-bottom: 14px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(31, 78, 140, 0.15);
+}
+
+input[type="file"] { font-size: 0.9rem; width: 100%; }
+.file-note { display: block; font-size: 0.78rem; color: #777; margin-top: 3px; }
+
+.radio-group { display: flex; gap: 18px; padding-top: 8px; }
+.radio-group label, .check { font-weight: normal; display: flex; align-items: center; gap: 6px; }
+.check { align-items: flex-start; font-size: 0.9rem; }
+.check input { margin-top: 4px; }
+
+/* ---------- validation states (classes added by JS) ---------- */
+.field.invalid input,
+.field.invalid select { border-color: var(--error); }
+.field.valid input,
+.field.valid select   { border-color: var(--success); }
+
+.error {
+    display: block;
+    color: var(--error);
+    font-size: 0.8rem;
+    min-height: 1em;
+    margin-top: 3px;
+}
+
+/* ---------- password strength ---------- */
+.strength {
+    height: 6px;
+    background: #e3e3e3;
+    border-radius: 3px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+#strengthBar {
+    height: 100%;
+    width: 0;
+    transition: width 0.3s, background 0.3s;
+}
+.strength-text { font-size: 0.8rem; font-weight: 600; }
+
+.rules { list-style: none; font-size: 0.78rem; color: #888; margin-top: 4px; }
+.rules li::before { content: "\2717  "; color: var(--error); }      /* cross mark */
+.rules li.ok { color: var(--success); }
+.rules li.ok::before { content: "\2713  "; color: var(--success); } /* tick mark */
+
+/* ---------- photo preview ---------- */
+.preview {
+    display: none;
+    width: 90px;
+    height: 110px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+/* ---------- buttons ---------- */
+.buttons { display: flex; justify-content: flex-end; gap: 12px; margin-top: 10px; }
+
+.btn {
+    padding: 10px 26px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-light { background: #e4e8ee; color: #333; }
+.btn-light:hover { background: #d4d9e0; }
+
+/* ---------- success message ---------- */
+.success-box { text-align: center; border-top: 5px solid var(--success); }
+.success-box h3 { color: var(--success); margin-bottom: 8px; }
+.success-box p { margin-bottom: 16px; }
+
+.foot { text-align: center; font-size: 0.8rem; color: #777; padding: 10px 0 25px; }
+
+/* ---------- responsive part: stack fields on small screens ---------- */
+@media (max-width: 640px) {
+    .row { flex-direction: column; gap: 0; }
+    form, .success-box { padding: 20px 16px; }
+    .top-bar h1 { font-size: 1.15rem; }
+    .buttons { flex-direction: column-reverse; }
+    .btn { width: 100%; }
+}

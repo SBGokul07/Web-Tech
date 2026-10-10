@@ -1,0 +1,2 @@
+# stop people from browsing the list of uploaded files
+Options -Indexes
